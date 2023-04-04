@@ -32,18 +32,21 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c7tnl"]
-radius = 27.0
-height = 68.0
+radius = 94.0
+height = 188.0
 
 [node name="Player" type="Area2D"]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_4xy07")
-metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.878505, 0.878505)
 sprite_frames = SubResource("SpriteFrames_05jd0")
 animation = &"up"
-frame_progress = 0.43094
+frame = 1
+frame_progress = 0.319656
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_c7tnl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
